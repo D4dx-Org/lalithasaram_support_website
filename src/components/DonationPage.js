@@ -2,8 +2,8 @@ import React from 'react';
 import { Heart, Smartphone, Book, HandHeart, Globe } from 'lucide-react';
 
 const Header = () => (
-  <header className="bg-[#2B4C8C] py-8 px-4 text-center mb-12">
-    <img src="/api/placeholder/120/60" alt="Tafheem Logo" className="h-16 w-auto mx-auto" />
+  <header className="bg-[#fff] py-8 px-4 text-center mb-12">
+    <img src="/images/logo.png" alt="Tafheem Logo" className="h-16 w-auto mx-auto" />
   </header>
 );
 
@@ -20,14 +20,14 @@ const SupportSection = () => (
 
 const QuoteCard = () => (
   <div className="bg-white p-8 rounded-lg text-center mx-auto max-w-3xl mb-8 shadow-sm">
-    <p className="text-xl font-bold mb-2 text-gray-800">
-      مَّن ذَا ٱلَّذِى يُقْرِضُ ٱللَّهَ قَرْضًا حَسَنًۭا فَيُضَـٰعِفَهُۥ لَهُۥ وَلَهُۥٓ أَجْرٌۭ كَرِيمٌۭ
+            <p className="text-3xl text-center mb-6 leading-relaxed font-arabic" dir="rtl">
+            مَن ذَا الَّذِي يُقْرِضُ اللَّهَ قَرْضًا حَسَنًا فَيُضَاعِفَهُ لَهُ وَلَهُ أَجْرٌ كَرِيمٌ
     </p>
     <p className="text-lg italic text-gray-700 mb-2">
-      "Who is it that would loan Allah a goodly loan so He will multiply it for him and he will have a noble reward?"
+    "Who is it that will give Allah a beautiful loan? A loan that Allah will repay after increasing it many times and grant him a generous reward."
     </p>
     <p className="text-lg text-gray-700 mb-2">
-      അല്ലാഹുവിന് കടം കൊടുക്കുന്നവരാരുണ്ട്? വിശിഷ്ടമായ കടം; അല്ലാഹു അത് പലയിരട്ടി വര്‍ധിപ്പിച്ചു തിരിച്ചേകാന്‍. അപ്രകാരം കടം കൊടുക്കുന്നവന്ന് ശ്രേഷ്ഠമായ പ്രതിഫലവുമുണ്ട്.
+    അല്ലാഹുവിന് കടം കൊടുക്കുന്നവരാരുണ്ട്? വിശിഷ്ടമായ കടം; അല്ലാഹു അത് പലയിരട്ടി വര്‍ധിപ്പിച്ചു തിരിച്ചേകാന്‍. അപ്രകാരം കടം കൊടുക്കുന്നവന്ന് ശ്രേഷ്ഠമായ പ്രതിഫലവുമുണ്ട്.
     </p>
     <span className="text-blue-500 text-sm">- Surah Al-Hadid 57:11</span>
   </div>
