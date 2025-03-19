@@ -2,6 +2,7 @@ import React from 'react';
 import { Heart, Smartphone, Book, HandHeart, Globe } from 'lucide-react';
 
 const Header = () => (
+  
   <header className="bg-[#fff] py-8 px-4 text-center mb-12">
     <img src="/images/logo.png" alt="Tafheem Logo" className="h-16 w-auto mx-auto" />
   </header>
@@ -10,7 +11,7 @@ const Header = () => (
 const SupportSection = () => (
   <div className="max-w-3xl mx-auto mb-8 text-center px-5">
     <h1 className="text-3xl md:text-4xl text-gray-800 mb-4 font-semibold leading-tight">
-      Support Tafheem ul Quran
+      Help Tafheem ul Quran
     </h1>
     <p className="text-gray-600">
       Join us in spreading the understanding of Allah's words through your generous contribution
