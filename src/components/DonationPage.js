@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom';
 
 // Log: Updated Header component to display a full-width banner image with an auto height.
 const Header = () => (
-  <header className="bg-black mb-12 flex justify-center items-center">
-    <img src="/images/donationBanner.png" alt="Donation Banner" className="w-3/5 h-auto" />
-  </header>
+  <div className="bg-[#0b0e10] pt-8">
+    <header className="bg-[#0b0e10] mb-12 flex justify-center items-center">
+      <img src="/images/donationBanner.png" alt="Donation Banner" className="w-3/5 h-auto" />
+    </header>
+  </div>
 );
 
 const SupportSection = () => (
