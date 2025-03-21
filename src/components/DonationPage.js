@@ -84,23 +84,15 @@ const AppDownload = () => (
     <div className="flex flex-col md:flex-row gap-4 justify-center">
       <a
         href="https://play.google.com/store/apps/details?id=com.d4media.thafheem"
-        className="inline-flex items-center gap-3 bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-all mx-auto md:mx-2"
+        className="inline-flex items-center gap-3  text-white px-2 py-2 rounded-lg hover:bg-gray-200 transition-all mx-auto md:mx-2"
       >
-        <Smartphone size={24} />
-        <div className="flex flex-col items-start">
-          <span className="text-xs opacity-90">GET IT ON</span>
-          <strong className="text-lg">Google Play</strong>
-        </div>
+        <img src="/images/google-play-badge.png" alt="Get it on Google Play" className="w-40" />
       </a>
       <a
         href="https://apps.apple.com/in/app/thafheem-ul-quran/id1292572556"
-        className="inline-flex items-center gap-3 bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-all mx-auto md:mx-2"
+        className="inline-flex items-center gap-3 text-white px-2 py-2 rounded-lg hover:bg-gray-200 transition-all mx-auto md:mx-2"
       >
-        <Smartphone size={24} />
-        <div className="flex flex-col items-start">
-          <span className="text-xs opacity-90">Download on the</span>
-          <strong className="text-lg">App Store</strong>
-        </div>
+        <img src="/images/app-store-badge.png" alt="Download on the App Store" className="w-40" />
       </a>
     </div>
   </div>
