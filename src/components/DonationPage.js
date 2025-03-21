@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Smartphone, Book, HandHeart, Globe, Phone, Mail, MapPin, X } from 'lucide-react';
+import { Heart, Smartphone, Book, BookOpen, HandHeart, Globe, DollarSign, Phone, Mail, MapPin, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 // Log: Updated Header component to display a full-width banner image with an auto height.
@@ -78,17 +78,17 @@ const BenefitCard = ({ icon: Icon, title, description }) => (
 const Benefits = () => (
   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-5 my-12">
     <BenefitCard
-      icon={Book}
+      icon={() => <img src="/images/quran_icon.png" alt="Quran Icon" className="mx-auto" style={{ height: '36px', width: '36px' }} />}
       title="Spread Knowledge"
       description="Help make Quranic understanding accessible to everyone through modern interpretations"
     />
     <BenefitCard
-      icon={HandHeart}
+      icon={() => <img src="/images/S_A_W_icon.png" alt="Quran Icon" className="mx-auto" style={{ height: '36px', width: '36px' }} />}
       title="Continuous Charity"
       description="Earn ongoing rewards as people benefit from the knowledge you help spread"
     />
     <BenefitCard
-      icon={Globe}
+      icon={() => <img src="/images/donate_icon.png" alt="Quran Icon" className="mx-auto" style={{ height: '36px', width: '36px' }} />}
       title="Global Impact"
       description="Support the translation and interpretation of Quran for a global audience"
     />
