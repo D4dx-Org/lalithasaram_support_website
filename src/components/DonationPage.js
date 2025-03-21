@@ -20,20 +20,38 @@ const SupportSection = () => (
   </div>
 );
 
-const QuoteCard = () => (
-  <div className="bg-white p-8 rounded-lg text-center mx-auto max-w-3xl mb-8 shadow-sm">
-            <p className="text-3xl text-center mb-6 leading-relaxed font-arabic" dir="rtl">
-            مَن ذَا الَّذِي يُقْرِضُ اللَّهَ قَرْضًا حَسَنًا فَيُضَاعِفَهُ لَهُ وَلَهُ أَجْرٌ كَرِيمٌ
-    </p>
-    <p className="text-lg italic text-gray-700 mb-2">
-    "Who is it that will give Allah a beautiful loan? A loan that Allah will repay after increasing it many times and grant him a generous reward."
-    </p>
-    <p className="text-lg text-gray-700 mb-2">
-    അല്ലാഹുവിന് കടം കൊടുക്കുന്നവരാരുണ്ട്? വിശിഷ്ടമായ കടം; അല്ലാഹു അത് പലയിരട്ടി വര്‍ധിപ്പിച്ചു തിരിച്ചേകാന്‍. അപ്രകാരം കടം കൊടുക്കുന്നവന്ന് ശ്രേഷ്ഠമായ പ്രതിഫലവുമുണ്ട്.
-    </p>
-    <span className="text-blue-500 text-sm">- Surah Al-Hadid 57:11</span>
-  </div>
-);
+const QuoteCard = () => {
+  const translations = [
+    { text: "Who is it that will give Allah a beautiful loan? A loan that Allah will repay after increasing it many times and grant him a generous reward.", className: "text-lg italic text-gray-700", dir: "ltr" },
+    { text: "അല്ലാഹുവിന് കടം കൊടുക്കുന്നവരാരുണ്ട്? വിശിഷ്ടമായ കടം; അല്ലാഹു അത് പലയിരട്ടി വര്‍ധിപ്പിച്ചു തിരിച്ചേകാന്‍. അപ്രകാരം കടം കൊടുക്കുന്നവന്ന് ശ്രേഷ്ഠമായ പ്രതിഫലവുമുണ്ട്.", className: "text-lg text-gray-700 font-malayalam", dir: "ltr" },
+    { text: "کون ہے جو اللہ کو قرض دے؟ اچھا قرض، تاکہ اللہ اسے کئی گُنا بڑھا کر واپس دے، اور اُس کے لیے بہترین اجر ہے .", className: "text-lg text-gray-700 font-urdu", dir: "ltr" },
+    { text: "அல்லாஹ்விற்குக் கடன் கொடுப்பவர் யார்? அழகிய கடன்! அல்லாஹ் அதனைப் பன்மடங்கு பெருக்கி அவருக்குத் திரும்பக் கொடுப்பதற்காக! மேலும், அவருக்கு மிகச் சிறந்த கூலியும் இருக்கின்றது.", className: "text-lg text-gray-700 font-tamil", dir: "ltr" },
+    { text: "এমন কেউ কি আছে যে আল্লাহকে ঋণ দিতে পারে? উত্তম ঋণ যাতে আল্লাহ‌ তা কয়েকগুণ বৃদ্ধি করে ফেরত দেন। আর সেদিন তার জন্য রয়েছে সর্বোত্তম প্রতিদান১৬", className: "text-lg text-gray-700 font-bengali", dir: "ltr" }
+  ];
+  
+  const arabicText = "مَن ذَا الَّذِي يُقْرِضُ اللَّهَ قَرْضًا حَسَنًا فَيُضَاعِفَهُ لَهُ وَلَهُ أَجْرٌ كَرِيمٌ";
+  
+  const [currentTranslation, setCurrentTranslation] = React.useState(0);
+  
+  React.useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentTranslation(prev => (prev + 1) % translations.length);
+    }, 5000);
+    return () => clearInterval(intervalId);
+  }, [translations.length]);
+  
+  return (
+    <div className="bg-white p-8 rounded-lg text-center mx-auto max-w-3xl mb-8 shadow-sm">
+      <p className="text-3xl mb-6 leading-relaxed font-arabic" dir="rtl">
+        {arabicText}
+      </p>
+      <p className={`${translations[currentTranslation].className} mb-6`} dir={translations[currentTranslation].dir}>
+        {translations[currentTranslation].text}
+      </p>
+      <span className="text-[#289bb9] text-sm">- Surah Al-Hadid 57:11</span>
+    </div>
+  );
+};
 
 const DonateButton = () => (
   <div className="text-center">
