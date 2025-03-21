@@ -11,7 +11,7 @@ const Header = () => (
 const SupportSection = () => (
   <div className="max-w-3xl mx-auto mb-8 text-center px-5">
     <h1 className="text-3xl md:text-4xl text-gray-800 mb-4 font-semibold leading-tight">
-      Help Tafheem ul Quran
+      Support Thafheem ul Quran
     </h1>
     <p className="text-gray-600">
       Join us in spreading the understanding of Allah's words through your generous contribution
@@ -79,7 +79,7 @@ const Benefits = () => (
 const AppDownload = () => (
   <div className="text-center py-12 bg-white mt-12">
     <h2 className="text-2xl md:text-3xl text-gray-800 mb-2">Download Our App</h2>
-    <p className="text-gray-600 mb-8">Experience Tafheem ul Quran on your mobile device</p>
+    <p className="text-gray-600 mb-8">Experience Thafheem ul Quran on your mobile device</p>
     <div className="flex flex-col md:flex-row gap-4 justify-center">
       <a
         href="https://play.google.com/store/apps/details?id=com.d4media.thafheem"
@@ -108,7 +108,7 @@ const AppDownload = () => (
 const Footer = () => (
   <footer className="bg-[#2B4C8C] text-white py-8 px-4 mt-12">
     <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-      <p>&copy; 2024 Tafheem ul Quran. All rights reserved.</p>
+      <p>&copy; 2024 Thafheem ul Quran. All rights reserved.</p>
       <div className="flex flex-col md:flex-row gap-4 md:gap-8">
         <a href="https://merchant.razorpay.com/policy/PV2XAkNJXKVU7X" className="opacity-80 hover:opacity-100 transition-opacity">
           Privacy Policy
