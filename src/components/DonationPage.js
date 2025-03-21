@@ -24,7 +24,7 @@ const QuoteCard = () => {
   const translations = [
     { text: "Who is it that will give Allah a beautiful loan? A loan that Allah will repay after increasing it many times and grant him a generous reward.", className: "text-lg italic text-gray-700", dir: "ltr" },
     { text: "അല്ലാഹുവിന് കടം കൊടുക്കുന്നവരാരുണ്ട്? വിശിഷ്ടമായ കടം; അല്ലാഹു അത് പലയിരട്ടി വര്‍ധിപ്പിച്ചു തിരിച്ചേകാന്‍. അപ്രകാരം കടം കൊടുക്കുന്നവന്ന് ശ്രേഷ്ഠമായ പ്രതിഫലവുമുണ്ട്.", className: "text-lg text-gray-700 font-malayalam", dir: "ltr" },
-    { text: "کون ہے جو اللہ کو قرض دے؟ اچھا قرض، تاکہ اللہ اسے کئی گُنا بڑھا کر واپس دے، اور اُس کے لیے بہترین اجر ہے .", className: "text-lg text-gray-700 font-urdu", dir: "ltr" },
+    { text: "کون ہے جو اللہ کو قرض دے؟ اچھا قرض، تاکہ اللہ اسے کئی گُنا بڑھا کر واپس دے، اور اُس کے لیے بہترین اجر ہے .", className: "text-lg text-gray-700 font-urdu", dir: "rtl" },
     { text: "அல்லாஹ்விற்குக் கடன் கொடுப்பவர் யார்? அழகிய கடன்! அல்லாஹ் அதனைப் பன்மடங்கு பெருக்கி அவருக்குத் திரும்பக் கொடுப்பதற்காக! மேலும், அவருக்கு மிகச் சிறந்த கூலியும் இருக்கின்றது.", className: "text-lg text-gray-700 font-tamil", dir: "ltr" },
     { text: "এমন কেউ কি আছে যে আল্লাহকে ঋণ দিতে পারে? উত্তম ঋণ যাতে আল্লাহ‌ তা কয়েকগুণ বৃদ্ধি করে ফেরত দেন। আর সেদিন তার জন্য রয়েছে সর্বোত্তম প্রতিদান১৬", className: "text-lg text-gray-700 font-bengali", dir: "ltr" }
   ];
@@ -65,32 +65,69 @@ const DonateButton = () => (
   </div>
 );
 
-const BenefitCard = ({ icon: Icon, title, description }) => (
-  <div className="bg-white p-8 rounded-lg text-center shadow-sm">
-    <div className="text-blue-500 mb-4">
-      <Icon size={24} className="mx-auto" />
-    </div>
-    <h3 className="text-gray-800 mb-2 font-medium text-lg">{title}</h3>
+const BenefitCard = ({ icon: Icon, title, description, translations }) => {
+  const hasTranslations = translations && translations.length > 0;
+  const [currentTranslation, setCurrentTranslation] = React.useState(0);
+
+  React.useEffect(() => {
+    let intervalId;
+    if (hasTranslations) {
+      intervalId = setInterval(() => {
+        setCurrentTranslation(prev => (prev + 1) % translations.length);
+      }, 5000);
+    }
+    return () => {
+      if (intervalId) clearInterval(intervalId);
+    };
+  }, [hasTranslations, translations]);
+
+  const displayedContent = hasTranslations ? (
+    <p className={translations[currentTranslation].className} dir={translations[currentTranslation].dir}>
+      {translations[currentTranslation].text}
+    </p>
+  ) : (
     <p className="text-gray-600 text-sm">{description}</p>
-  </div>
-);
+  );
+
+  return (
+    <div className="bg-white p-8 rounded-lg text-center shadow-sm">
+      <div className="text-blue-500 mb-4">
+        <Icon size={24} className="mx-auto" />
+      </div>
+      <h3 className="text-gray-800 mb-2 font-medium text-lg">{title}</h3>
+      {displayedContent}
+    </div>
+  );
+};
 
 const Benefits = () => (
   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-5 my-12">
     <BenefitCard
       icon={() => <img src="/images/quran_icon.png" alt="Quran Icon" className="mx-auto" style={{ height: '36px', width: '36px' }} />}
-      title="Spread Knowledge"
-      description="Help make Quranic understanding accessible to everyone through modern interpretations"
+      title="Divine Guidance"
+      translations={[
+         { text: "This Quran shows you the straightest path.", className: "text-gray-600 text-sm", dir: "ltr" },
+         { text: "ഈ ഖുര്‍ആന്‍ ഏറ്റവും നേരായ വഴി കാണിച്ചുതരുന്നു. ( 17 : 9 )", className: "text-gray-600 text-sm font-malayalam", dir: "ltr" },
+         { text: "إِنَّ هَٰذَا الْقُرْآنَ يَهْدِي لِلَّتِي هِيَ أَقْوَمُ", className: "text-gray-600 text-sm font-arabic", dir: "rtl" }
+      ]}
     />
     <BenefitCard
       icon={() => <img src="/images/S_A_W_icon.png" alt="Quran Icon" className="mx-auto" style={{ height: '36px', width: '36px' }} />}
-      title="Continuous Charity"
-      description="Earn ongoing rewards as people benefit from the knowledge you help spread"
+      title="Learn & Teach"
+      translations={[
+         { text: "The Prophet (peace be upon him) said: 'The best among you is the one who learns the Quran and teaches it.'", className: "text-gray-600 text-sm", dir: "ltr" },
+         { text: "നബി (സ) പറഞ്ഞു: 'നിങ്ങളിൽ ഉത്തമൻ, ഖുർആൻ പഠിക്കുകയും അത് പഠിപ്പിക്കുകയും ചെയ്യുന്നവനാണ്'.", className: "text-gray-600 text-sm font-malayalam", dir: "ltr" },
+         { text: "رسول اللہ صلی اللہ علیہ وسلم نے فرمایا: تم میں سے بہترین وہ ہے جو قرآن سیکھے اور سکھائے۔", className: "text-gray-600 text-sm font-urdu", dir: "rtl" }
+      ]}
     />
     <BenefitCard
       icon={() => <img src="/images/donate_icon.png" alt="Quran Icon" className="mx-auto" style={{ height: '36px', width: '36px' }} />}
-      title="Global Impact"
-      description="Support the translation and interpretation of Quran for a global audience"
+      title="Support Through Sadaqah"
+      translations={[
+         { text: "Support this great initiative of making the Quran available to the general public by giving a portion of your Zakat and Sadaqah.", className: "text-gray-600 text-sm", dir: "ltr" },
+         { text: "ഖുർആനിനെ  പൊതു സമൂഹത്തിന് ലഭ്യമാക്കുന്ന ഈ മഹദ് സംരഭത്തെ നിങ്ങളുടെ സകാത്-സ്വദഖകളില്‍ നിന്ന് ഒരു വിഹിതം നൽകി സഹായിക്കുക..", className: "text-gray-600 text-sm font-malayalam", dir: "ltr" },
+         { text: "براہِ کرم اپنی زکوٰۃ اور صدقات میں سے کچھ حصہ دے کر عوام الناس کے لیے قرآن مجید کو عام کرنے کے اس عظیم اقدام کی حمایت کریں۔", className: "text-gray-600 text-sm font-urdu", dir: "rtl" }
+      ]}
     />
   </div>
 );
