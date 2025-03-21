@@ -1,10 +1,12 @@
 import React from 'react';
 import { Heart, Smartphone, Book, HandHeart, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import ContactDialog from './ui/ContactDialog';
 
+// Log: Updated Header component to display a full-width banner image with an auto height.
 const Header = () => (
-  
-  <header className="bg-[#fff] py-8 px-4 text-center mb-12">
-    <img src="/images/logo.png" alt="Tafheem Logo" className="h-16 w-auto mx-auto" />
+  <header className="bg-black mb-12 flex justify-center items-center">
+    <img src="/images/donationBanner.png" alt="Donation Banner" className="w-3/5 h-auto" />
   </header>
 );
 
@@ -105,24 +107,34 @@ const AppDownload = () => (
   </div>
 );
 
-const Footer = () => (
-  <footer className="bg-[#2B4C8C] text-white py-8 px-4 mt-12">
-    <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-      <p>&copy; 2024 Thafheem ul Quran. All rights reserved.</p>
-      <div className="flex flex-col md:flex-row gap-4 md:gap-8">
-        <a href="https://merchant.razorpay.com/policy/PV2XAkNJXKVU7X" className="opacity-80 hover:opacity-100 transition-opacity">
-          Privacy Policy
-        </a>
-        <a href="https://merchant.razorpay.com/policy/PV2XAkNJXKVU7X/privacy" className="opacity-80 hover:opacity-100 transition-opacity">
-          Terms of Service
-        </a>
-        <a href="https://d4dx.co/contact/" className="opacity-80 hover:opacity-100 transition-opacity">
-          Contact Us
-        </a>
-      </div>
-    </div>
-  </footer>
-);
+const Footer = () => {
+  const [isContactOpen, setIsContactOpen] = React.useState(false);
+
+  return (
+    <>
+      <footer className="bg-[#289bb9] text-white py-8 px-4 mt-12">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+          <p>&copy; 2024 Thafheem ul Quran. All rights reserved.</p>
+          <div className="flex flex-col md:flex-row gap-4 md:gap-8">
+            <a href="https://merchant.razorpay.com/policy/PV2XAkNJXKVU7X" className="opacity-80 hover:opacity-100 transition-opacity">
+              Privacy Policy
+            </a>
+            <a href="https://merchant.razorpay.com/policy/PV2XAkNJXKVU7X/privacy" className="opacity-80 hover:opacity-100 transition-opacity">
+              Terms of Service
+            </a>
+            <button 
+              onClick={() => setIsContactOpen(true)} 
+              className="opacity-80 hover:opacity-100 transition-opacity text-left"
+            >
+              Contact Us
+            </button>
+          </div>
+        </div>
+      </footer>
+      <ContactDialog isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
+    </>
+  );
+};
 
 const App = () => {
   return (

@@ -1,11 +1,14 @@
 import React from 'react';
-import LandingPage from './components/DonationPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import DonationPage from './components/DonationPage';
 
 function App() {
   return (
-    <div className="App">
-      <LandingPage />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<DonationPage />} />
+      </Routes>
+    </Router>
   );
 }
 
