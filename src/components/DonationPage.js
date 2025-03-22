@@ -162,7 +162,7 @@ const Footer = () => {
     <>
       <footer className="bg-[#289bb9] text-white py-8 px-4 mt-12">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>&copy; 2024 Thafheem ul Quran. All rights reserved.</p>
+          <p>&copy; 2025 Thafheem ul Quran. All rights reserved.</p>
           <div className="flex flex-col md:flex-row gap-4 md:gap-8">
             <a href="https://merchant.razorpay.com/policy/PV2XAkNJXKVU7X" className="opacity-80 hover:opacity-100 transition-opacity">
               Privacy Policy
