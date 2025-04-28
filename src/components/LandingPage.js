@@ -136,7 +136,7 @@ const LandingPage = () => {
               <div className="w-12 h-12 rounded-xl flex items-center justify-center transform transition-transform hover:rotate-12 overflow-hidden">
                 <img src="/images/logo.png" alt="Thafheem Logo" className="w-full h-full object-cover" />
               </div>
-              <span className="text-gray-800 text-xl font-bold">Thafheem Ul Quran</span>
+              <span className="text-gray-800 text-xl font-bold">Quran Lalithasaram</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
               {[
@@ -367,7 +367,7 @@ const LandingPage = () => {
           {/* Footer Credits */}
           <footer className="py-6 bg-gray-50">
             <p className="text-center text-sm text-gray-600">
-              © {new Date().getFullYear()} Thafheem ul Quran. Developed by{" "}
+              © {new Date().getFullYear()} Quran Lalithasaram. Developed by{" "}
               <a
                 href="https://d4dx.co"
                 target="_blank"

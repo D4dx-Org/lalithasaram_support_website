@@ -14,10 +14,10 @@ const Header = () => (
 const SupportSection = () => (
   <div className="max-w-3xl mx-auto mb-8 text-center px-5">
     <h1 className="text-3xl md:text-4xl text-gray-800 mb-4 font-semibold leading-tight">
-      Support Thafheem ul Quran
+      Support Quran Lalithasaram
     </h1>
     <p className="text-gray-600">
-      Join us in spreading the understanding of Allah's words through your generous contribution
+    ഖുർആനിനെ കാലഘട്ടത്തിന്റെ ഭാഷയില്‍ പൊതു സമൂഹത്തിന് ലഭ്യമാക്കുന്ന ഈ മഹദ് സംരഭത്തെ ഇസ്‌ലാമിക പ്രബോധനത്തില്‍ തല്‍പരരായ ഉദാരമതികള്‍ അവരുടെ സകാത്-സ്വദഖകളില്‍ നിന്ന് ഒരു വിഹിതം നീക്കിവെച്ച് സഹായിക്കണമെന്നപേക്ഷിക്കുന്നു.
     </p>
   </div>
 );
@@ -50,7 +50,7 @@ const QuoteCard = () => {
       <p className={`${translations[currentTranslation].className} mb-6`} dir={translations[currentTranslation].dir}>
         {translations[currentTranslation].text}
       </p>
-      <span className="text-[#289bb9] text-sm">- Surah Al-Hadid 57:11</span>
+      <span className="text-[#97781c] text-sm">- Surah Al-Hadid 57:11</span>
     </div>
   );
 };
@@ -58,8 +58,8 @@ const QuoteCard = () => {
 const DonateButton = () => (
   <div className="text-center">
     <a
-      href="https://rzp.io/rzp/thafheem-donation"
-      className="inline-flex items-center gap-2 bg-[#289bb9] text-white px-10 py-3 rounded-md font-medium text-lg hover:bg-[#248ca7] transition-all shadow-md hover:-translate-y-0.5"
+      href="https://rzp.io/rzp/support-quran-lalithasaram"
+      className="inline-flex items-center gap-2 bg-[#97781c] text-white px-10 py-3 rounded-md font-medium text-lg hover:bg-[#bfa14d] transition-all shadow-md hover:-translate-y-0.5"
     >
       <Heart size={20} />
       Donate Now
@@ -93,7 +93,7 @@ const BenefitCard = ({ icon: Icon, title, description, translations }) => {
 
   return (
     <div className="bg-white p-8 rounded-lg text-center shadow-sm">
-      <div className="text-blue-500 mb-4">
+      <div className="text-[#97781c] mb-4">
         <Icon size={24} className="mx-auto" />
       </div>
       <h3 className="text-gray-800 mb-2 font-medium text-lg">{title}</h3>
@@ -137,16 +137,16 @@ const Benefits = () => (
 const AppDownload = () => (
   <div className="text-center py-12 bg-white mt-12">
     <h2 className="text-2xl md:text-3xl text-gray-800 mb-2">Download Our App</h2>
-    <p className="text-gray-600 mb-8">Experience Thafheem ul Quran on your mobile device</p>
+    <p className="text-gray-600 mb-8">Experience Quran Lalithasaram on your mobile device</p>
     <div className="flex flex-col md:flex-row gap-4 justify-center">
       <a
-        href="https://play.google.com/store/apps/details?id=com.d4media.thafheem"
+        href="https://play.google.com/store/apps/details?id=in.d4media.lalithasaramaudio"
         className="inline-flex items-center gap-3  text-white px-2 py-2 rounded-lg hover:bg-gray-200 transition-all mx-auto md:mx-2"
       >
         <img src="/images/google-play-badge.png" alt="Get it on Google Play" className="w-40" />
       </a>
       <a
-        href="https://apps.apple.com/in/app/thafheem-ul-quran/id1292572556"
+        href="https://apps.apple.com/in/app/quran-lalithasaram/id1180558504"
         className="inline-flex items-center gap-3 text-white px-2 py-2 rounded-lg hover:bg-gray-200 transition-all mx-auto md:mx-2"
       >
         <img src="/images/app-store-badge.png" alt="Download on the App Store" className="w-40" />
@@ -160,9 +160,9 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-[#289bb9] text-white py-8 px-4 mt-12">
+      <footer className="bg-[#97781c] text-white py-8 px-4 mt-12">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>&copy; 2025 Thafheem ul Quran. All rights reserved.</p>
+          <p>&copy; 2025 Quran Lalithasaram. All rights reserved.</p>
           <div className="flex flex-col md:flex-row gap-4 md:gap-8">
             <a href="https://merchant.razorpay.com/policy/PV2XAkNJXKVU7X" className="opacity-80 hover:opacity-100 transition-opacity">
               Privacy Policy
@@ -189,7 +189,7 @@ const ContactDialog = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-gradient-to-br from-white to-blue-50 rounded-2xl w-full max-w-2xl shadow-xl relative overflow-hidden">
+      <div className="bg-gradient-to-br from-white to-[#f6ecd1] rounded-2xl w-full max-w-2xl shadow-xl relative overflow-hidden">
         {/* Close Button */}
         <button 
           onClick={onClose}
@@ -203,11 +203,11 @@ const ContactDialog = ({ isOpen, onClose }) => {
           {/* Title Section */}
           <div className="text-center mb-8">
             <div className="w-16 h-16 mx-auto mb-4">
-              <img src="/images/logo.png" alt="Thafheem Logo" className="w-full h-full object-cover rounded-xl" />
+              <img src="/images/logo.png" alt="Lalithasaram Logo" className="w-full h-full object-cover -xl" />
             </div>
             <h2 className="text-3xl font-bold text-gray-900 mb-2">Get in Touch</h2>
             <p className="text-gray-600">
-              Have questions about Thafheem ul Quran? We're here to help!
+              Have questions about Quran Lalithasaram? We're here to help!
             </p>
           </div>
 
@@ -215,13 +215,13 @@ const ContactDialog = ({ isOpen, onClose }) => {
           <div className="space-y-4">
             {/* Phone */}
             <div className="transform transition-all hover:-translate-y-1 hover:shadow-lg">
-              <div className="flex items-center space-x-6 bg-white p-6 rounded-xl shadow-sm border border-blue-50">
-                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
-                  <Phone className="w-6 h-6 text-[#57b8d0]" />
+              <div className="flex items-center space-x-6 bg-white p-6 rounded-xl shadow-sm border border-[#f6ecd1]">
+                <div className="w-12 h-12 bg-[#f6ecd1] rounded-xl flex items-center justify-center">
+                  <Phone className="w-6 h-6 text-[#bfa14d]" />
                 </div>
                 <div>
                   <h3 className="text-gray-500 text-sm mb-1">Phone</h3>
-                  <a href="tel:+919946666139" className="text-gray-900 text-lg hover:text-[#57b8d0] transition-colors">
+                  <a href="tel:+919946666139" className="text-gray-900 text-lg hover:text-[#bfa14d] transition-colors">
                     +91 99466 66139
                   </a>
                 </div>
@@ -230,13 +230,13 @@ const ContactDialog = ({ isOpen, onClose }) => {
 
             {/* Email */}
             <div className="transform transition-all hover:-translate-y-1 hover:shadow-lg">
-              <div className="flex items-center space-x-6 bg-white p-6 rounded-xl shadow-sm border border-blue-50">
-                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-[#57b8d0]" />
+              <div className="flex items-center space-x-6 bg-white p-6 rounded-xl shadow-sm border border-[#f6ecd1]">
+                <div className="w-12 h-12 bg-[#f6ecd1] rounded-xl flex items-center justify-center">
+                  <Mail className="w-6 h-6 text-[#bfa14d]" />
                 </div>
                 <div>
                   <h3 className="text-gray-500 text-sm mb-1">Email</h3>
-                  <a href="mailto:info@d4media.in" className="text-gray-900 text-lg hover:text-[#57b8d0] transition-colors">
+                  <a href="mailto:info@d4media.in" className="text-gray-900 text-lg hover:text-[#bfa14d] transition-colors">
                     info@d4media.in
                   </a>
                 </div>
@@ -245,9 +245,9 @@ const ContactDialog = ({ isOpen, onClose }) => {
 
             {/* Address */}
             <div className="transform transition-all hover:-translate-y-1 hover:shadow-lg">
-              <div className="flex items-center space-x-6 bg-white p-6 rounded-xl shadow-sm border border-blue-50">
-                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
-                  <MapPin className="w-6 h-6 text-[#57b8d0]" />
+              <div className="flex items-center space-x-6 bg-white p-6 rounded-xl shadow-sm border border-[#f6ecd1]">
+                <div className="w-12 h-12 bg-[#f6ecd1] rounded-xl flex items-center justify-center">
+                  <MapPin className="w-6 h-6 text-[#bfa14d]" />
                 </div>
                 <div>
                   <h3 className="text-gray-500 text-sm mb-1">Address</h3>
